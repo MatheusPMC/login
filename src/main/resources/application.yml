@@ -1,7 +1,41 @@
 micronaut:
   application:
     name: login
+  server:
+    port: 8084
+    cors:
+      enabled: true
+      configurations:
+        web:
+          allowedMethods:
+            - POST
+            - PUT
+            - GET
+            - DELETE
+  security:
+    authentication: bearer
+    token:
+      enabled: true
+      signatures:
+        jwks:
+          keycloak:
+            url: http://localhost:8080/realms/login/protocol/openid-connect/certs
+
 netty:
   default:
     allocator:
       max-order: 3
+
+redis.uri: redis://localhost
+
+keycloak:
+  authUrl: http://localhost:8080/realms/login/protocol/openid-connect/auth?client_id=myclient&redirect_uri=https%3A%2F%2Fwww.keycloak.org%2Fapp%2F%23url%3Dhttp%3A%2F%2localhost%3A8080%2Fauth%26realm%3Dmyrealm%26client%3Dmyrealm%26client%3Dmyclient&state=60782d3c-f93d-468f-8eb2-9cdef24afba0&response_mode=gragment&response_type=code&scope=openid&nonce=a8152238-a828-487a-8c2c-c47201ccb2ad5
+  usersRegisterUrl: http://localhost:8080/admin/realms/login/users
+  accessTokenAdminCliUrl: http://localhost:8080/realms/login/protocol/openid-connect/token
+  grantType: client_credentials
+  clientId: micronaut
+  clientSecret: kdxGmltCcWs7sH2TrySDyty5sNVtdNcf
+  certsRSAUrl: http://localhost:8080/realms/login/protocol/openid-connect/certs
+
+mongodb:
+  uri: 'mongodb://localhost:27017/login'
