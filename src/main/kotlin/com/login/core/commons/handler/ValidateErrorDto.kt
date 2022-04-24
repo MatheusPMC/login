@@ -1,4 +1,5 @@
-package com.dashBoardUniversary.commons.handler
+package com.login.core.commons.handler
+
 
 class ValidateErrorDto (
     val message: String,

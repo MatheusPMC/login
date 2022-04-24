@@ -1,9 +1,9 @@
 package com.login.core.service
 
-import com.dashBoardUniversary.commons.extensions.TestLogging
-import com.dashBoardUniversary.commons.extensions.logger
-import com.dashBoardUniversary.commons.handler.KeycloakException
-import com.dashBoardUniversary.config.KeycloakConfiguration
+import com.login.core.commons.extensions.TestLogging
+import com.login.core.commons.extensions.logger
+import com.login.core.commons.handler.KeycloakException
+import com.login.core.config.KeycloakConfiguration
 import com.login.core.port.KeycloakSignUpServicePort
 import com.google.gson.JsonParser
 import com.login.entry.dto.UserRequest
@@ -14,7 +14,6 @@ import com.squareup.okhttp.Request
 import com.squareup.okhttp.RequestBody
 import io.jsonwebtoken.Jwts
 import io.micronaut.context.annotation.Prototype
-import jakarta.inject.Named
 import java.security.KeyFactory
 import java.security.PublicKey
 import java.security.spec.RSAPublicKeySpec

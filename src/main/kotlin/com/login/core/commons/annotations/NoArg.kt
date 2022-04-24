@@ -1,4 +1,4 @@
-package com.dashBoardUniversary.commons.annotations
+package com.login.core.commons.annotations
 
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.SOURCE)

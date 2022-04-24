@@ -1,4 +1,4 @@
-package com.dashBoardUniversary.commons.handler
+package com.login.core.commons.handler
 
 data class FieldError(
     val field: String,

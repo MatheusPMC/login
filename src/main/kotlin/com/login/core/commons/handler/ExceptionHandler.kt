@@ -1,7 +1,7 @@
-package com.dashBoardUniversary.commons.handler
+package com.login.core.commons.handler
 
-import com.dashBoardUniversary.commons.extensions.TestLogging
-import com.dashBoardUniversary.commons.extensions.logger
+import com.login.core.commons.extensions.TestLogging
+import com.login.core.commons.extensions.logger
 import io.micronaut.aop.Around
 import io.micronaut.aop.InterceptorBean
 import io.micronaut.aop.MethodInterceptor

@@ -1,4 +1,4 @@
-package com.dashBoardUniversary.config
+package com.login.core.config
 
 import io.micronaut.context.ApplicationContext
 import io.micronaut.context.annotation.ConfigurationProperties

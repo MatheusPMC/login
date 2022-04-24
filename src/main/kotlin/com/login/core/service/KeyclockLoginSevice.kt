@@ -1,8 +1,8 @@
 package com.login.core.service
 
-import com.dashBoardUniversary.commons.extensions.TestLogging
-import com.dashBoardUniversary.commons.extensions.logger
-import com.dashBoardUniversary.config.KeycloakConfiguration
+import com.login.core.commons.extensions.TestLogging
+import com.login.core.commons.extensions.logger
+import com.login.core.config.KeycloakConfiguration
 import com.login.core.port.KeyclockLoginSevicePort
 import com.google.gson.JsonParser
 import com.login.entry.dto.UserRequest
