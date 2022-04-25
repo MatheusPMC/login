@@ -1,4 +1,4 @@
-package com.login.core.commons.handler
+package com.login.commons.handler
 
 import java.lang.RuntimeException
 

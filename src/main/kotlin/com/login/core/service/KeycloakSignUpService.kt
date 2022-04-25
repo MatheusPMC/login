@@ -1,8 +1,8 @@
 package com.login.core.service
 
-import com.login.core.commons.extensions.TestLogging
-import com.login.core.commons.extensions.logger
-import com.login.core.commons.handler.KeycloakException
+import com.login.commons.extensions.TestLogging
+import com.login.commons.extensions.logger
+import com.login.commons.handler.KeycloakException
 import com.login.core.config.KeycloakConfiguration
 import com.login.core.port.KeycloakSignUpServicePort
 import com.google.gson.JsonParser
@@ -43,18 +43,19 @@ class KeycloakSignUpService(
             val accessTokenAdminCli = this.getAccessTokenAdminCli()
             keycloakCacheService.saveTokenAdminCliCache(accessTokenAdminCli)
 
+            println(accessTokenAdminCli)
             accessTokenAdminCli
         }
 
         val mediaType = MediaType.parse("application/json")
         val body = RequestBody.create(mediaType, "{\"firstName\":\"${user.firstName}\"," +
                 "\"lastName\":\"${user.lastName}\"," +
-                "\"username\":\"${user.username}\"," +
+                "\"username\":\"${user.userName}\"," +
                 "\"email\":\"${user.email}\"," +
                 "\"emailVerified\":${true}," +
                 "\"credentials\":[{\"type\":\"password\",\"value\":\"${user.password}\",\"temporary\":false}],\"enabled\":true}")
         val request = Request.Builder()
-            .url("http://localhost:8080/admin/realms/login/users")
+            .url(keycloakConfiguration.usersRegisterUrl)
             .post(body)
             .addHeader("Content-Type", "application/json")
             .addHeader("Authorization", "Bearer $accessToken")
@@ -66,7 +67,7 @@ class KeycloakSignUpService(
         }
 
         logger().info("signUp - usuÃ¡rio registrado no keycloak!")
-        return UserRequest(user.username, user.firstName, user.lastName, user.email, user.password)
+        return UserRequest(user.userName, user.firstName, user.lastName, user.email, user.password)
     }
 
     private fun getAccessTokenAdminCli(): String {

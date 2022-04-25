@@ -1,7 +1,7 @@
-package com.login.core.commons.handler
+package com.login.commons.handler
 
-import com.login.core.commons.extensions.TestLogging
-import com.login.core.commons.extensions.logger
+import com.login.commons.extensions.TestLogging
+import com.login.commons.extensions.logger
 import io.micronaut.aop.Around
 import io.micronaut.aop.InterceptorBean
 import io.micronaut.aop.MethodInterceptor

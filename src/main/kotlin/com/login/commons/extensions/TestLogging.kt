@@ -1,4 +1,4 @@
-package com.login.core.commons.extensions
+package com.login.commons.extensions
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory

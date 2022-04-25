@@ -15,11 +15,13 @@ micronaut:
   security:
     authentication: bearer
     token:
-      enabled: true
-      signatures:
-        jwks:
-          keycloak:
-            url: http://localhost:8080/realms/login/protocol/openid-connect/certs
+      jwt:
+        enabled: true
+        signatures:
+          jwks:
+            keycloak:
+              url: http://localhost:8080/realms/login/protocol/openid-connect/certs
+
 
 netty:
   default:

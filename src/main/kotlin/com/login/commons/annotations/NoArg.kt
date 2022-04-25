@@ -1,4 +1,4 @@
-package com.login.core.commons.annotations
+package com.login.commons.annotations
 
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.SOURCE)
